@@ -10,13 +10,13 @@ import UIKit
 
 class TextAndImageCell: UITableViewCell {
     @IBOutlet var titleLabel: UILabel!
-    @IBOutlet var funnyImage: UIImageView!
+    @IBOutlet var infoImage: UIImageView!
     @IBOutlet var descriptionLabel: UILabel!
 
 
     func configure() {
-        titleLabel.text? = "Lorem ipsum dolor sit amet"
-        descriptionLabel.text? = "..., consectetur adipiscing elit."
-        funnyImage.image = UIImage(named: "monkey")
+        titleLabel.text? = "Apple Worldwide Developers Conference"
+        descriptionLabel.text? = "San Jose, CA, June 4-8"
+        infoImage.image = UIImage(named: "wwdc2018")
     }
 }

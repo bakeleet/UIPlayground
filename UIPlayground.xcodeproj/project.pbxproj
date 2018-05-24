@@ -8,36 +8,36 @@
 
 /* Begin PBXBuildFile section */
 		2C1DA83B20B02760001244BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1DA83A20B02760001244BA /* AppDelegate.swift */; };
-		2C1DA83D20B02760001244BA /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1DA83C20B02760001244BA /* CollectionViewController.swift */; };
 		2C1DA84020B02760001244BA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C1DA83E20B02760001244BA /* Main.storyboard */; };
 		2C1DA84220B02760001244BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C1DA84120B02760001244BA /* Assets.xcassets */; };
 		2C1DA84520B02760001244BA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C1DA84320B02760001244BA /* LaunchScreen.storyboard */; };
-		2C1DA84D20B02956001244BA /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1DA84C20B02956001244BA /* CollectionViewCell.swift */; };
-		2C1DA85220B044B2001244BA /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1DA85120B044B2001244BA /* DataSource.swift */; };
 		2C1DA85720B05C1E001244BA /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1DA85620B05C1E001244BA /* TableViewController.swift */; };
 		2C1DA85920B2201B001244BA /* TextAndImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1DA85820B2201B001244BA /* TextAndImageCell.swift */; };
 		2C1DA85B20B32793001244BA /* TextOnlyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1DA85A20B32793001244BA /* TextOnlyCell.swift */; };
 		2C1DA85D20B3372E001244BA /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1DA85C20B3372E001244BA /* ContainerViewController.swift */; };
 		2C1DA85F20B33982001244BA /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1DA85E20B33982001244BA /* Menu.swift */; };
 		2C1DA86120B34379001244BA /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1DA86020B34379001244BA /* TabBarController.swift */; };
+		2CB6368920B5E07700C9D1CE /* TabLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB6368820B5E07700C9D1CE /* TabLayout.swift */; };
+		2CB6368B20B5E6C800C9D1CE /* TabLayoutController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB6368A20B5E6C800C9D1CE /* TabLayoutController.swift */; };
+		2CB6368D20B68B3200C9D1CE /* CollapsingToolbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB6368C20B68B3200C9D1CE /* CollapsingToolbarViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2C1DA83720B02760001244BA /* UIPlayground.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIPlayground.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C1DA83A20B02760001244BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2C1DA83C20B02760001244BA /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
 		2C1DA83F20B02760001244BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2C1DA84120B02760001244BA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2C1DA84420B02760001244BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2C1DA84620B02760001244BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2C1DA84C20B02956001244BA /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
-		2C1DA85120B044B2001244BA /* DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
 		2C1DA85620B05C1E001244BA /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		2C1DA85820B2201B001244BA /* TextAndImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextAndImageCell.swift; sourceTree = "<group>"; };
 		2C1DA85A20B32793001244BA /* TextOnlyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextOnlyCell.swift; sourceTree = "<group>"; };
 		2C1DA85C20B3372E001244BA /* ContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
 		2C1DA85E20B33982001244BA /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
 		2C1DA86020B34379001244BA /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		2CB6368820B5E07700C9D1CE /* TabLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabLayout.swift; sourceTree = "<group>"; };
+		2CB6368A20B5E6C800C9D1CE /* TabLayoutController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabLayoutController.swift; sourceTree = "<group>"; };
+		2CB6368C20B68B3200C9D1CE /* CollapsingToolbarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollapsingToolbarViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,28 +70,25 @@
 		2C1DA83920B02760001244BA /* UIPlayground */ = {
 			isa = PBXGroup;
 			children = (
-				2C1DA83A20B02760001244BA /* AppDelegate.swift */,
 				2C1DA85C20B3372E001244BA /* ContainerViewController.swift */,
 				2C1DA85E20B33982001244BA /* Menu.swift */,
 				2C1DA86020B34379001244BA /* TabBarController.swift */,
+				2CB6368E20B68C0500C9D1CE /* TabLayout */,
 				2C1DA85520B05C0D001244BA /* TableView */,
-				2C1DA85420B052ED001244BA /* CollectionView */,
+				2C1DA85420B052ED001244BA /* CollapsingToolbar */,
 				2C1DA83E20B02760001244BA /* Main.storyboard */,
-				2C1DA84120B02760001244BA /* Assets.xcassets */,
-				2C1DA84320B02760001244BA /* LaunchScreen.storyboard */,
 				2C1DA84620B02760001244BA /* Info.plist */,
+				2CB6368F20B68C4200C9D1CE /* Supporting Files */,
 			);
 			path = UIPlayground;
 			sourceTree = "<group>";
 		};
-		2C1DA85420B052ED001244BA /* CollectionView */ = {
+		2C1DA85420B052ED001244BA /* CollapsingToolbar */ = {
 			isa = PBXGroup;
 			children = (
-				2C1DA83C20B02760001244BA /* CollectionViewController.swift */,
-				2C1DA84C20B02956001244BA /* CollectionViewCell.swift */,
-				2C1DA85120B044B2001244BA /* DataSource.swift */,
+				2CB6368C20B68B3200C9D1CE /* CollapsingToolbarViewController.swift */,
 			);
-			path = CollectionView;
+			path = CollapsingToolbar;
 			sourceTree = "<group>";
 		};
 		2C1DA85520B05C0D001244BA /* TableView */ = {
@@ -102,6 +99,25 @@
 				2C1DA85A20B32793001244BA /* TextOnlyCell.swift */,
 			);
 			path = TableView;
+			sourceTree = "<group>";
+		};
+		2CB6368E20B68C0500C9D1CE /* TabLayout */ = {
+			isa = PBXGroup;
+			children = (
+				2CB6368A20B5E6C800C9D1CE /* TabLayoutController.swift */,
+				2CB6368820B5E07700C9D1CE /* TabLayout.swift */,
+			);
+			path = TabLayout;
+			sourceTree = "<group>";
+		};
+		2CB6368F20B68C4200C9D1CE /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2C1DA83A20B02760001244BA /* AppDelegate.swift */,
+				2C1DA84120B02760001244BA /* Assets.xcassets */,
+				2C1DA84320B02760001244BA /* LaunchScreen.storyboard */,
+			);
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -131,7 +147,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0920;
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = "Krzysztof Niestrój";
 				TargetAttributes = {
 					2C1DA83620B02760001244BA = {
@@ -176,16 +192,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2C1DA83D20B02760001244BA /* CollectionViewController.swift in Sources */,
 				2C1DA85B20B32793001244BA /* TextOnlyCell.swift in Sources */,
 				2C1DA85D20B3372E001244BA /* ContainerViewController.swift in Sources */,
 				2C1DA86120B34379001244BA /* TabBarController.swift in Sources */,
 				2C1DA83B20B02760001244BA /* AppDelegate.swift in Sources */,
-				2C1DA85220B044B2001244BA /* DataSource.swift in Sources */,
 				2C1DA85720B05C1E001244BA /* TableViewController.swift in Sources */,
 				2C1DA85F20B33982001244BA /* Menu.swift in Sources */,
 				2C1DA85920B2201B001244BA /* TextAndImageCell.swift in Sources */,
-				2C1DA84D20B02956001244BA /* CollectionViewCell.swift in Sources */,
+				2CB6368920B5E07700C9D1CE /* TabLayout.swift in Sources */,
+				2CB6368D20B68B3200C9D1CE /* CollapsingToolbarViewController.swift in Sources */,
+				2CB6368B20B5E6C800C9D1CE /* TabLayoutController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -225,6 +241,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -232,6 +249,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -282,6 +300,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -289,6 +308,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;

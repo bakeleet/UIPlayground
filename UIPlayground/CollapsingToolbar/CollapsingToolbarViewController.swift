@@ -1,5 +1,5 @@
 //
-//  TableViewController.swift
+//  CollapsingToolbarViewController.swift
 //  UIPlayground
 //
 //  Created by Krzysztof Niestrój.
@@ -8,14 +8,18 @@
 
 import UIKit
 
-class TableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class CollapsingToolbarViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet var tableView: UITableView!
 
     private var data: [Int] = []
 
 
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
+    @IBAction func toggleMenu(_ sender: Any) {
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "toggleMenu"), object: nil)
+    }
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
 
         for _ in 1...100 {
             data.append(Int(arc4random_uniform(2)))
