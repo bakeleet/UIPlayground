@@ -8,11 +8,17 @@
 
 import UIKit
 
+public struct Tab {
+    var title: String?
+    var image: UIImage?
+    var controller: UIViewController
+}
+
 @objc public protocol TabLayoutDelegate: NSObjectProtocol {
     @objc optional func tabLayout(tabLayout: TabLayout, index: Int)
 }
 
-@IBDesignable public class TabLayout: UIScrollView, UIScrollViewDelegate{
+@IBDesignable public class TabLayout: UIScrollView, UIScrollViewDelegate {
     private let indicator = UIView()
     private var buttons = [UIButton]()
     private var controllers = [UIView]()
@@ -42,14 +48,6 @@ import UIKit
         didSet { reload() }
     }
 
-    @IBInspectable public var font: UIFont = UIFont.systemFont(ofSize: 20.0) {
-        didSet { reload() }
-    }
-
-    @IBInspectable public var currentFont: UIFont = UIFont.boldSystemFont(ofSize: 20.0) {
-        didSet { reload() }
-    }
-
     @IBInspectable public var imageColor: UIColor = UIColor.darkGray {
         didSet { reload() }
     }
@@ -62,6 +60,14 @@ import UIKit
         didSet { indicator.backgroundColor = indicatorColor }
     }
 
+    public var font: UIFont = UIFont.systemFont(ofSize: 20.0) {
+        didSet { reload() }
+    }
+
+    public var currentFont: UIFont = UIFont.boldSystemFont(ofSize: 20.0) {
+        didSet { reload() }
+    }
+
     public override func layoutSubviews() {
         super.layoutSubviews()
         showsHorizontalScrollIndicator = false
@@ -69,7 +75,7 @@ import UIKit
         reload()
     }
 
-    public func addTabs(tabs: [(title: String?, image: UIImage?, controller: UIViewController)]) {
+    public func addTabs(tabs: [Tab]) {
         addTabButtons(tabs: tabs)
         addControllers(tabControllers: tabs.map { $0.controller })
         reload()
@@ -90,20 +96,20 @@ import UIKit
         }
     }
 
-    private func addTabButtons(tabs: [(title: String?, image: UIImage?, controller: UIViewController)]) {
+    private func addTabButtons(tabs: [Tab]) {
         for button in buttons {
             button.removeFromSuperview()
         }
 
         buttons = []
 
-        var i = 0
+        var idx = 0
         for tab in tabs {
-            let button = configButton(index: i, title: tab.title, image: tab.image)
+            let button = configButton(index: idx, title: tab.title, image: tab.image)
             buttons.append(button)
             addSubview(button)
             addSubview(indicator)
-            i += 1
+            idx += 1
         }
     }
 
@@ -111,28 +117,31 @@ import UIKit
         refreshButtons()
         if buttons.count > 0 {
             setIndex(index: index, animated: false, scroll: false)
-            //index += 1
         }
-        scrollView?.contentSize = CGSize(width: (scrollView?.frame.size.width)! * CGFloat(buttons.count), height: (scrollView?.frame.size.height)!)
+        scrollView?.contentSize = CGSize(width: (scrollView?.frame.size.width)! * CGFloat(buttons.count),
+                                         height: (scrollView?.frame.size.height)!)
 
-        for i in 0..<controllers.count {
-            controllers[i].frame = CGRect(x: (scrollView?.frame.size.width)! * CGFloat(i), y: 0, width: (scrollView?.frame.size.width)!, height: (scrollView?.frame.size.height)!)
+        for idx in 0..<controllers.count {
+            controllers[idx].frame = CGRect(x: (scrollView?.frame.size.width)! * CGFloat(idx),
+                                            y: 0,
+                                            width: (scrollView?.frame.size.width)!,
+                                            height: (scrollView?.frame.size.height)!)
         }
     }
 
     private func refreshButtons() {
         let height = frame.size.height - 2
-        var currentWidth : CGFloat = 0.0
+        var currentWidth: CGFloat = 0.0
 
-        for i in 0..<buttons.count {
-            let button = buttons[i]
+        for idx in 0..<buttons.count {
+            let button = buttons[idx]
             let width = buttonWidth(button: button)
             button.frame = CGRect(x: currentWidth, y: 0, width: width, height: height)
             currentWidth += width
 
-            button.setTitleColor((i == index) ? currentTextColor : textColor, for: .normal)
-            button.titleLabel?.font = (i == index) ? currentFont : font
-            button.imageView?.tintColor = (i == index) ? currentImageColor : imageColor
+            button.setTitleColor((idx == index) ? currentTextColor : textColor, for: .normal)
+            button.titleLabel?.font = (idx == index) ? currentFont : font
+            button.imageView?.tintColor = (idx == index) ? currentImageColor : imageColor
         }
 
         contentSize = CGSize(width: currentWidth, height: height)
@@ -147,9 +156,9 @@ import UIKit
         self.index = index
         let button = self.buttons[index]
 
-        var currentWidth : CGFloat = 0.0
-        for i in 0...index {
-            currentWidth += self.buttonWidth(button: self.buttons[i])
+        var currentWidth: CGFloat = 0.0
+        for idx in 0...index {
+            currentWidth += self.buttonWidth(button: self.buttons[idx])
         }
 
         let width = self.buttonWidth(button: button)
@@ -184,7 +193,7 @@ import UIKit
     }
 
     public func buttonWidth(button: UIButton) -> CGFloat {
-        var width : CGFloat = 0
+        var width: CGFloat = 0
 
         if fixedMode {
             width = self.frame.size.width / CGFloat(buttons.count)
@@ -200,7 +209,7 @@ import UIKit
             width =  (size?.width)! + 20
         }
         if imageSize != nil {
-            width = width + (imageSize?.width)! + 20
+            width += (imageSize?.width)! + 20
         }
 
         return width
@@ -208,7 +217,7 @@ import UIKit
 }
 
 extension TabLayout {
-    public func configButton(index: Int, title: String?, image:UIImage?) -> UIButton {
+    public func configButton(index: Int, title: String?, image: UIImage?) -> UIButton {
         let button = UIButton(type: .custom)
 
         button.tag = index
@@ -222,8 +231,8 @@ extension TabLayout {
             let img = image?.withRenderingMode(.alwaysTemplate)
             button.setImage(img, for: .normal)
             if title != nil {
-                button.imageEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 10)
-                button.titleEdgeInsets = UIEdgeInsetsMake(0, 10, 0, 0)
+                button.imageEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 10)
+                button.titleEdgeInsets = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 0)
             }
         }
 

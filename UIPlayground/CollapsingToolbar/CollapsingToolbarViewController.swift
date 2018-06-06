@@ -13,7 +13,6 @@ class CollapsingToolbarViewController: UIViewController, UITableViewDataSource, 
 
     private var data: [Int] = []
 
-
     @IBAction func toggleMenu(_ sender: Any) {
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "toggleMenu"), object: nil)
     }
@@ -34,11 +33,15 @@ class CollapsingToolbarViewController: UIViewController, UITableViewDataSource, 
         let randomDataForCell = data[indexPath.row]
 
         if randomDataForCell == 0 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "textOnlyCell", for: indexPath) as! TextOnlyCell
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "textOnlyCell",
+                                                           for: indexPath) as? TextOnlyCell
+                else { return UITableViewCell() }
             cell.configure()
             return cell
         } else {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "textAndImageCell", for: indexPath) as! TextAndImageCell
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "textAndImageCell",
+                                                           for: indexPath) as? TextAndImageCell
+                else { return UITableViewCell() }
             cell.configure()
             return cell
         }

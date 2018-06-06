@@ -13,7 +13,6 @@ class TextAndImageCell: UITableViewCell {
     @IBOutlet var infoImage: UIImageView!
     @IBOutlet var descriptionLabel: UILabel!
 
-
     func configure() {
         titleLabel.text? = "Apple Worldwide Developers Conference"
         descriptionLabel.text? = "San Jose, CA, June 4-8"

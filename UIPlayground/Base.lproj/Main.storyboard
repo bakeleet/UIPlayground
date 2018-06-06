@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="sn7-lo-7u4">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="sn7-lo-7u4">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -33,6 +33,10 @@
                             </scrollView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hIv-2b-4Us">
                                 <rect key="frame" x="0.0" y="108" width="568" height="411"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="Q2w-UE-Toa" appends="YES" id="Qqj-fU-D4G"/>
+                                </connections>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -59,6 +63,12 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tVY-nN-ycV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <screenEdgePanGestureRecognizer minimumNumberOfTouches="1" id="Q2w-UE-Toa">
+                    <rectEdge key="edges" left="YES"/>
+                    <connections>
+                        <action selector="toggleMenu:" destination="AAB-YK-0NV" id="pC4-kK-j7k"/>
+                    </connections>
+                </screenEdgePanGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="545.60000000000002" y="-252.77361319340332"/>
         </scene>
@@ -312,22 +322,39 @@
                                             <segue destination="6Zp-bD-cxA" kind="embed" id="jaq-pw-NhW"/>
                                         </connections>
                                     </containerView>
+                                    <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dvt-lU-7XN">
+                                        <rect key="frame" x="260" y="0.0" width="568" height="568"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <gestureRecognizers/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="QgW-Xp-PeU" appends="YES" id="kLH-In-a7e"/>
+                                        </connections>
+                                    </view>
                                 </subviews>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="dWs-Xk-u7j" secondAttribute="trailing" id="1kd-vb-1zR"/>
                                     <constraint firstItem="dWs-Xk-u7j" firstAttribute="leading" secondItem="VXM-a7-ZaE" secondAttribute="trailing" id="2y5-w1-cFp"/>
                                     <constraint firstItem="VXM-a7-ZaE" firstAttribute="leading" secondItem="hsz-qa-vP6" secondAttribute="leading" id="6n6-8W-kpG"/>
                                     <constraint firstAttribute="bottom" secondItem="VXM-a7-ZaE" secondAttribute="bottom" id="9QE-ck-UKP"/>
                                     <constraint firstItem="VXM-a7-ZaE" firstAttribute="top" secondItem="hsz-qa-vP6" secondAttribute="top" id="Bg0-L5-L4V"/>
+                                    <constraint firstAttribute="trailing" secondItem="dvt-lU-7XN" secondAttribute="trailing" id="E9w-nO-o2y"/>
+                                    <constraint firstItem="dvt-lU-7XN" firstAttribute="leading" secondItem="dWs-Xk-u7j" secondAttribute="leading" id="MMB-EP-LXM"/>
                                     <constraint firstItem="dWs-Xk-u7j" firstAttribute="top" secondItem="hsz-qa-vP6" secondAttribute="top" id="Wv5-dy-rVj"/>
+                                    <constraint firstItem="dvt-lU-7XN" firstAttribute="bottom" secondItem="VXM-a7-ZaE" secondAttribute="bottom" id="bXl-Ta-0SU"/>
+                                    <constraint firstItem="dvt-lU-7XN" firstAttribute="top" secondItem="VXM-a7-ZaE" secondAttribute="top" id="tW8-hb-UxO"/>
                                     <constraint firstAttribute="bottom" secondItem="dWs-Xk-u7j" secondAttribute="bottom" id="uHj-cs-n2N"/>
                                 </constraints>
                                 <connections>
                                     <outlet property="delegate" destination="sn7-lo-7u4" id="cxP-ny-yWm"/>
+                                    <outletCollection property="gestureRecognizers" destination="ICO-Pe-WaS" appends="YES" id="Fe6-Vr-vS5"/>
+                                    <outletCollection property="gestureRecognizers" destination="SeE-4L-BgV" appends="YES" id="A1Z-a0-oI2"/>
                                 </connections>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="dWs-Xk-u7j" secondAttribute="width" id="4JY-8X-DF5"/>
                             <constraint firstItem="hsz-qa-vP6" firstAttribute="top" secondItem="O6q-Oe-b2e" secondAttribute="top" id="Ce2-je-chE"/>
@@ -342,10 +369,29 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="568" height="568"/>
                     <connections>
+                        <outlet property="rightContainer" destination="dWs-Xk-u7j" id="Gap-Qq-m1Y"/>
+                        <outlet property="rightContainerDisabler" destination="dvt-lU-7XN" id="9k3-f7-cZp"/>
+                        <outlet property="screenEdgePanGesture" destination="SeE-4L-BgV" id="o1W-op-6dK"/>
                         <outlet property="scrollView" destination="hsz-qa-vP6" id="JDS-Ti-NOC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d4m-Qu-vYw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="left" id="ICO-Pe-WaS">
+                    <connections>
+                        <action selector="swipeLeft:" destination="sn7-lo-7u4" id="gHS-Fn-DQG"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <screenEdgePanGestureRecognizer minimumNumberOfTouches="1" id="SeE-4L-BgV">
+                    <rectEdge key="edges" left="YES"/>
+                    <connections>
+                        <action selector="swipeRight:" destination="sn7-lo-7u4" id="dnd-Q9-O7n"/>
+                    </connections>
+                </screenEdgePanGestureRecognizer>
+                <tapGestureRecognizer id="QgW-Xp-PeU">
+                    <connections>
+                        <action selector="toggleDisabler:" destination="sn7-lo-7u4" id="A8W-qd-tB0"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-2912" y="99"/>
         </scene>

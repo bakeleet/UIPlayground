@@ -13,7 +13,6 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
 
     private var data: [Int] = []
 
-
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
 
@@ -30,11 +29,15 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
         let randomDataForCell = data[indexPath.row]
 
         if randomDataForCell == 0 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "textOnlyCell", for: indexPath) as! TextOnlyCell
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "textOnlyCell",
+                                                           for: indexPath) as? TextOnlyCell
+                else { return UITableViewCell() }
             cell.configure()
             return cell
         } else {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "textAndImageCell", for: indexPath) as! TextAndImageCell
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "textAndImageCell",
+                                                           for: indexPath) as? TextAndImageCell
+                else { return UITableViewCell() }
             cell.configure()
             return cell
         }

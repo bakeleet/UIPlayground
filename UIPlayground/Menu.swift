@@ -13,7 +13,6 @@ class Menu: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     private let data = ["Most Viewed", "Featured"]
 
-
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return data.count
     }
@@ -30,8 +29,7 @@ class Menu: UIViewController, UITableViewDataSource, UITableViewDelegate {
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "toggleMostViewed"), object: nil)
         case 1:
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "toggleFeatured"), object: nil)
-        default:
-            print("do nothing")
+        default: break
         }
     }
 

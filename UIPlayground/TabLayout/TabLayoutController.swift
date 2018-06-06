@@ -10,11 +10,10 @@ import UIKit
 
 class TabLayoutController: UIViewController, TabLayoutDelegate {
     @IBOutlet weak var tabLayout: TabLayout!
-    
-    private var firstViewController: TableViewController?
-    private var secondViewController: TableViewController?
-    private var thirdViewController: TableViewController?
 
+    private var allVC: TableViewController?
+    private var newVC: TableViewController?
+    private var featuredVC: TableViewController?
 
     @IBAction func toggleMenu(_ sender: Any) {
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "toggleMenu"), object: nil)
@@ -24,18 +23,18 @@ class TabLayoutController: UIViewController, TabLayoutDelegate {
         super.viewDidLoad()
 
         let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
-
-        firstViewController = mainStoryboard.instantiateViewController(withIdentifier: "TableViewController") as? TableViewController
-
-        secondViewController = mainStoryboard.instantiateViewController(withIdentifier: "TableViewController") as? TableViewController
-
-        thirdViewController = mainStoryboard.instantiateViewController(withIdentifier: "TableViewController") as? TableViewController
+        let tableId = "TableViewController"
+        allVC = mainStoryboard.instantiateViewController(withIdentifier: tableId) as? TableViewController
+        newVC = mainStoryboard.instantiateViewController(withIdentifier: tableId) as? TableViewController
+        featuredVC = mainStoryboard.instantiateViewController(withIdentifier: tableId) as? TableViewController
 
         tabLayout.tabLayoutDelegate = self
         tabLayout.addTabs(tabs: [
-                                    ("ALL", nil, firstViewController!),
-                                    ("NEW", nil, secondViewController!),
-                                    ("FEATURED", nil, thirdViewController!)
+                                    Tab(title: "All", image: nil, controller: allVC!),
+                                    Tab(title: "New", image: nil, controller: newVC!),
+                                    Tab(title: "Featured", image: nil, controller: featuredVC!)
                                 ])
+
+        //tabLayout.scrollView?.panGestureRecognizer.require(toFail: screenEdgePanGesture)
     }
 }
